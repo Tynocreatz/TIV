@@ -1,0 +1,334 @@
+TIV Digital Studios Website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TIV Digital Studios</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background: radial-gradient(circle at top,#0d1b2a,#000814);
+color:white;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+/* animated stars */
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(white 1px, transparent 1px);
+background-size:50px 50px;
+opacity:0.15;
+animation:stars 120s linear infinite;
+z-index:-1;
+}
+
+@keyframes stars{
+from{transform:translateY(0);}
+to{transform:translateY(-2000px);}
+}
+
+/* navbar */
+
+nav{
+position:fixed;
+width:100%;
+top:0;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:14px;
+letter-spacing:2px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#9ecbff;
+}
+
+/* sections */
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:80px 20px;
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* hero */
+
+.hero img{
+width:200px;
+margin-bottom:30px;
+animation:logoSpin 20s linear infinite;
+filter:drop-shadow(0 0 20px rgba(255,255,255,0.3));
+}
+
+@keyframes logoSpin{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+
+.hero h1{
+font-size:42px;
+letter-spacing:4px;
+margin-bottom:10px;
+}
+
+.hero p{
+opacity:0.7;
+}
+
+/* services */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:900px;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:12px;
+backdrop-filter:blur(8px);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:rgba(255,255,255,0.08);
+}
+
+/* portfolio */
+
+.portfolio{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:900px;
+margin-top:40px;
+}
+
+.portfolio video{
+width:100%;
+border-radius:12px;
+}
+
+/* chat box */
+
+.chatbox{
+width:320px;
+background:rgba(255,255,255,0.05);
+border-radius:12px;
+padding:20px;
+margin-top:30px;
+}
+
+.chatbox input,
+.chatbox textarea{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:none;
+border-radius:6px;
+background:#0d1b2a;
+color:white;
+}
+
+.chatbox button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:6px;
+background:#3a86ff;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.chatbox button:hover{
+background:#539bff;
+}
+
+footer{
+text-align:center;
+padding:40px;
+opacity:0.5;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Work</a>
+<a href="#contact">Inquiries</a>
+</nav>
+
+<!-- HERO -->
+
+<section id="home" class="hero show">
+
+<img src="logo.png">
+
+<h1>TIV DIGITAL STUDIOS</h1>
+
+<p>Video Editing • Digital Art • Logos • Social Media Management</p>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2>Our Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🎬 Video Editing</h3>
+<p>TikTok & Instagram edits designed to go viral.</p>
+</div>
+
+<div class="card">
+<h3>🎨 Digital Art</h3>
+<p>Custom illustrations and profile graphics.</p>
+</div>
+
+<div class="card">
+<h3>🧠 Logo Design</h3>
+<p>Modern minimal branding for creators and brands.</p>
+</div>
+
+<div class="card">
+<h3>📱 Social Media Management</h3>
+<p>Full page management and growth strategy.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+<h2>Our Work</h2>
+
+<div class="portfolio">
+
+<video controls>
+<source src="video1.mp4" type="video/mp4">
+</video>
+
+<video controls>
+<source src="video2.mp4" type="video/mp4">
+</video>
+
+<video controls>
+<source src="video3.mp4" type="video/mp4">
+</video>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2>Project Inquiry</h2>
+
+<p>Tell us about your project and we’ll reply soon.</p>
+
+<div class="chatbox">
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<textarea rows="4" placeholder="Describe your project"></textarea>
+
+<button>Send Inquiry</button>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 TIV Digital Studios — Deutschland
+
+</footer>
+
+<script>
+
+/* section animations */
+
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll",()=>{
+
+sections.forEach(sec=>{
+const top = window.scrollY;
+const offset = sec.offsetTop - 400;
+
+if(top > offset){
+sec.classList.add("show");
+}
+})
+
+})
+
+</script>
+
+</body>
+</html>
+
+Files included:
+- index.html (main website)
+- Place your logo named 'logo.png' in this folder
+- Add videos named video1.mp4, video2.mp4, video3.mp4
+
+Open index.html in a browser to preview the site.
+Upload all files to GitHub to publish.
