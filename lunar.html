@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TIV Digital Studios</title>
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:black;
+color:white;
+overflow-x:hidden;
+cursor:none;
+}
+/* ===== PARALLAX SPACE ===== */
+.star1,.star2,.star3{
+position:fixed;
+background:white;
+border-radius:50%;
+pointer-events:none;
+}
+.star1{width:2px;height:2px;opacity:0.6;}
+.star2{width:1px;height:1px;opacity:0.3;}
+.star3{width:3px;height:3px;opacity:0.15;}
+@keyframes drift{
+from{transform:translateY(-10vh);}
+to{transform:translateY(110vh);}
+}
+/* ===== NEBULA GLOW ===== */
+.nebula{
+position:fixed;
+width:500px;
+height:500px;
+background:radial-gradient(circle,rgba(255,255,255,0.08),transparent 60%);
+filter:blur(20px);
+animation:floatNebula 20s infinite linear;
+z-index:0;
+}
+@keyframes floatNebula{
+0%{transform:translate(10vw,10vh);}
+50%{transform:translate(60vw,40vh);}
+100%{transform:translate(10vw,10vh);}
+}
+/* ===== CURSOR STAR ===== */
+.cursor{
+position:fixed;
+width:10px;
+height:10px;
+background:white;
+clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+box-shadow:0 0 15px white;
+pointer-events:none;
+z-index:9999;
+}
+/* ===== INTRO ===== */
+#intro{
+position:fixed;
+inset:0;
+background:black;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+z-index:99999;
+}
+#moon{
+width:140px;
+height:140px;
+border-radius:50%;
+background:white;
+box-shadow:0 0 60px white;
+cursor:pointer;
+position:relative;
+overflow:hidden;
+}
+#moon::after{
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle at var(--x,50%) var(--y,50%),rgba(255,255,255,0.5),transparent);
+}
+/* phases */
+.p1{clip-path:circle(60% at 70% 50%);}
+.p2{clip-path:circle(55% at 60% 50%);}
+.p3{border-radius:40%;}
+.p4{box-shadow:0 0 120px white; transform:scale(1.1);}
+.explode{
+animation:explode 0.9s forwards;
+}
+@keyframes explode{
+0%{transform:scale(1);}
+100%{transform:scale(0);opacity:0;}
+}
+/* ===== STAR FIELD AFTER EXPLOSION ===== */
+.particle{
+position:fixed;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+opacity:0.8;
+pointer-events:none;
+animation:stick 1s forwards;
+}
+@keyframes stick{
+to{
+transform:translate(0,0);
+opacity:0.7;
+}
+}
+/* ===== NAV ===== */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:25px;
+padding:15px;
+background:rgba(0,0,0,0.6);
+z-index:1000;
+}
+nav a{
+color:white;
+text-decoration:none;
+}
+/* ===== SECTIONS ===== */
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:80px 20px;
+position:relative;
+z-index:1;
+}
+/* ===== SERVICES ===== */
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+max-width:900px;
+margin-top:20px;
+}
+.card{
+border:1px solid white;
+padding:20px;
+position:relative;
+overflow:hidden;
+transition:0.4s;
+}
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);
+transition:0.6s;
+}
+.card:hover::before{
+left:100%;
+}
+.card:hover{
+transform:scale(1.05);
+}
+/* button */
+button{
+padding:10px 15px;
+background:white;
+color:black;
+border:none;
+cursor:pointer;
+margin-top:10px;
+}
+/* ===== PORTFOLIO ===== */
+.portfolio{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:900px;
+margin-top:20px;
+}
+.portfolio div{
+border:1px solid white;
+padding:40px;
+opacity:0.6;
+}
+/* ===== CONTACT ===== */
+.contact{
+margin-top:20px;
+}
+</style>
+</head>
+<body>
+<div class="cursor"></div>
+<div class="nebula"></div>
+<!-- INTRO -->
+<div id="intro">
+<div id="moon"></div>
+<p>Click the Moon to enter the studio 🌙</p>
+</div>
+<!-- NAV -->
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#work">Work</a>
+<a href="#contact">Contact</a>
+</nav>
+<!-- HOME -->
+<section id="home">
+<h1>TIV DIGITAL STUDIOS</h1>
+<p>Premium Moon Creative Studio</p>
+</section>
+<!-- SERVICES -->
+<section id="services">
+<h2>Services</h2>
+<div class="services">
+<div class="card">
+Video Editing<br>10–20€
+<button onclick="email('Video Editing')">Request</button>
+</div>
+<div class="card">
+Logo Design<br>30–50€
+<button onclick="email('Logo Design')">Request</button>
+</div>
+<div class="card">
+Digital Art<br>20–40€
+<button onclick="email('Digital Art')">Request</button>
+</div>
+<div class="card">
+Social Media Management<br>100–300€
+<button onclick="email('Social Media')">Request</button>
+</div>
+</div>
+</section>
+<!-- WORK -->
+<section id="work">
+<h2>Portfolio</h2>
+<div class="portfolio">
+<div>Video Project 1</div>
+<div>Video Project 2</div>
+<div>Design Work 1</div>
+<div>Branding Sample</div>
+</div>
+</section>
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<p>Send us an email directly:</p>
+<button onclick="window.location.href='mailto:tynoeditz@gmail.com'">
+Email TIV Studio
+</button>
+</section>
+<script>
+/* ===== STAR CURSOR ===== */
+const cursor=document.querySelector(".cursor");
+document.addEventListener("mousemove",(e)=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+});
+/* ===== STAR BACKGROUND ===== */
+for(let i=0;i<60;i++){
+let s=document.createElement("div");
+s.className="star1";
+s.style.left=Math.random()*100+"vw";
+s.style.animationDuration=(Math.random()*6+4)+"s";
+document.body.appendChild(s);
+}
+/* ===== NEBULA SECOND LAYER ===== */
+for(let i=0;i<30;i++){
+let s=document.createElement("div");
+s.className="star2";
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+document.body.appendChild(s);
+}
+/* ===== INTRO MOON ===== */
+const moon=document.getElementById("moon");
+let phase=0;
+moon.addEventListener("mousemove",(e)=>{
+let x=(e.offsetX/moon.clientWidth)*100;
+let y=(e.offsetY/moon.clientHeight)*100;
+moon.style.setProperty("--x",x+"%");
+moon.style.setProperty("--y",y+"%");
+});
+moon.onclick=()=>{
+phase++;
+if(phase===1) moon.classList.add("p1");
+if(phase===2) moon.classList.add("p2");
+if(phase===3) moon.classList.add("p3");
+if(phase===4) moon.classList.add("p4");
+if(phase>4){
+moon.classList.add("explode");
+createStarExplosion();
+setTimeout(()=>document.getElementById("intro").remove(),900);
+}
+};
+/* ===== STAR EXPLOSION ===== */
+function createStarExplosion(){
+for(let i=0;i<120;i++){
+let p=document.createElement("div");
+p.className="particle";
+p.style.left="50vw";
+p.style.top="50vh";
+document.body.appendChild(p);
+let angle=Math.random()*2*Math.PI;
+let dist=Math.random()*200;
+setTimeout(()=>{
+p.style.transform=`translate(${Math.cos(angle)*dist}px,${Math.sin(angle)*dist}px)`;
+},10);
+}
+}
+/* ===== EMAIL FUNCTION ===== */
+function email(service){
+window.location.href=
+`mailto:tynoeditz@gmail.com?subject=${service} Request&body=Hello, I want ${service} work.`;
+}
+</script>
+</body>
+</html>
