@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TIV Digital Studios</title>
+
+<meta name="description" content="TIV Digital Studios – Videobearbeitung, Branding und Social Media Wachstum für Creator & Unternehmen.">
+<meta name="keywords" content="Videobearbeitung, TikTok Editing, Social Media Agentur, Logo Design">
+
+<style>
+
+/* RESET */
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+/* BACKGROUND */
+.star{
+position:fixed;
+width:2px;
+height:2px;
+background:white;
+opacity:0.5;
+animation:moveStars 10s linear infinite;
+will-change: transform;
+}
+
+@keyframes moveStars{
+from{transform:translateY(-10vh);}
+to{transform:translateY(110vh);}
+}
+
+.nebula{
+position:fixed;
+width:500px;
+height:500px;
+background:radial-gradient(circle,rgba(255,255,255,0.06),transparent 60%);
+filter:blur(40px);
+animation:float 30s infinite linear;
+will-change: transform;
+}
+
+@keyframes float{
+0%{transform:translate(0,0);}
+50%{transform:translate(40vw,25vh);}
+100%{transform:translate(0,0);}
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:12px;
+padding:12px;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+z-index:1000;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#ccc;
+text-decoration:none;
+font-size:13px;
+padding:6px 10px;
+}
+
+nav a:hover{
+color:white;
+}
+
+/* SECTIONS */
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:90px 20px 60px;
+}
+
+/* HERO */
+h1{
+font-size:2.2rem;
+line-height:1.2;
+}
+
+h2{
+font-size:1.6rem;
+}
+
+.tagline{
+opacity:0.75;
+max-width:90%;
+font-size:0.95rem;
+}
+
+/* BUTTON */
+button{
+padding:14px 20px;
+background:white;
+color:black;
+border:none;
+margin-top:18px;
+font-size:15px;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px white;
+}
+
+/* CARDS */
+.services{
+display:grid;
+grid-template-columns:1fr;
+gap:16px;
+width:100%;
+max-width:500px;
+margin-top:20px;
+}
+
+.card{
+padding:18px;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:10px;
+text-align:left;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+/* TESTIMONIALS */
+.testimonials{
+width:100%;
+max-width:500px;
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:20px;
+}
+
+/* CONTACT */
+.contact-form{
+width:100%;
+max-width:420px;
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select{
+padding:14px;
+font-size:15px;
+border:none;
+background:#111;
+color:white;
+border-radius:6px;
+}
+
+/* INTRO */
+#intro{
+position:fixed;
+inset:0;
+background:black;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+z-index:99999;
+}
+
+#moon{
+width:100px;
+height:100px;
+border-radius:50%;
+background:white;
+box-shadow:0 0 60px white;
+}
+
+/* DESKTOP */
+@media (min-width:768px){
+
+h1{font-size:3rem;}
+h2{font-size:2rem;}
+
+.services{
+grid-template-columns:repeat(2,1fr);
+max-width:900px;
+}
+
+nav a{
+font-size:14px;
+}
+
+}
+
+@media (min-width:1100px){
+
+.services{
+grid-template-columns:repeat(4,1fr);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="nebula"></div>
+
+<!-- INTRO -->
+<div id="intro">
+<div id="moon"></div>
+<p>Betritt TIV Digital Studios 🌙</p>
+</div>
+
+<!-- NAV -->
+<nav>
+<a href="#home">Start</a>
+<a href="#services">Leistungen</a>
+<a href="#work">Portfolio</a>
+<a href="#contact">Kontakt</a>
+
+<a href="https://www.instagram.com/tivs.tudios?igsh=amZvZXQxaDZwYndl&utm_source=qr" target="_blank">Instagram</a>
+<a href="https://www.tiktok.com/@tiv1243" target="_blank">TikTok</a>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+<h1>TIV DIGITAL STUDIOS</h1>
+
+<p class="tagline">
+Wir helfen Creatorn & Marken dabei, mit hochwertigem Content schneller zu wachsen.
+</p>
+
+<p class="tagline"><i>Rise above and Eclipse the mundane</i></p>
+
+<p class="tagline">Antwort innerhalb von 24h • Zusammenarbeit weltweit 🌍</p>
+
+<button onclick="scrollToSection('contact')">Projekt starten 🚀</button>
+
+<p class="tagline">Tippe unten, um dein Projekt zu starten 👇</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Leistungen</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Videobearbeitung</h3>
+<p>✔ TikTok, Reels & YouTube<br>✔ Engagement-optimiert<br><br><strong>Ab 70€</strong></p>
+<button onclick="scrollToSection('contact')">Jetzt anfragen</button>
+</div>
+
+<div class="card">
+<h3>Logo Design</h3>
+<p>✔ Modern & clean<br>✔ Mehrere Revisionen<br><br><strong>Ab 100€</strong></p>
+<button onclick="scrollToSection('contact')">Jetzt anfragen</button>
+</div>
+
+<div class="card">
+<h3>Digitale Kunst</h3>
+<p>✔ Individuelle Designs<br>✔ Hochauflösend<br><br><strong>Ab 80€</strong></p>
+<button onclick="scrollToSection('contact')">Jetzt anfragen</button>
+</div>
+
+<div class="card">
+<h3>Social Media Management</h3>
+<p>✔ Content Strategie<br>✔ Wachstumssysteme<br><br><strong>Ab 300€/Monat</strong></p>
+<button onclick="scrollToSection('contact')">Jetzt anfragen</button>
+</div>
+
+</div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="work">
+<h2>Portfolio</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Viraler TikTok Edit</h3>
+<p>High-engagement Content mit starken Hooks.</p>
+</div>
+
+<div class="card">
+<h3>Vorher / Nachher</h3>
+<p>Vom Rohclip zum professionellen Video.</p>
+</div>
+
+<div class="card">
+<h3>Brand Promo</h3>
+<p>Cinematic Ads für Unternehmen.</p>
+</div>
+
+</div>
+
+<p class="tagline">Mehr Projekte auf unseren Socials.</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+<h2>Kundenfeedback</h2>
+
+<div class="testimonials">
+
+<div class="card">
+<p>"Extrem schnelle Lieferung und starke Qualität!"</p>
+<strong>- Content Creator</strong>
+</div>
+
+<div class="card">
+<p>"Unsere Videos performen deutlich besser."</p>
+<strong>- Brand Owner</strong>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Kontakt</h2>
+
+<form action="https://formsubmit.co/tynoeditz@gmail.com" method="POST" class="contact-form">
+<input type="text" name="name" placeholder="Dein Name" required>
+<input type="email" name="email" placeholder="Deine E-Mail" required>
+
+<select name="service">
+<option>Videobearbeitung</option>
+<option>Logo Design</option>
+<option>Digitale Kunst</option>
+<option>Social Media Management</option>
+</select>
+
+<textarea name="message" placeholder="Deine Nachricht..." required></textarea>
+
+<button type="submit">Anfrage senden 🚀</button>
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="thankyou.html">
+</form>
+
+</section>
+
+<script>
+
+/* STARS (FIXED STABILITY) */
+for(let i=0;i<60;i++){
+let s=document.createElement("div");
+s.className="star";
+s.style.left=Math.random()*100+"vw";
+s.style.animationDuration=(Math.random()*8+5)+"s";
+s.style.animationDelay=Math.random()*5+"s";
+document.body.appendChild(s);
+}
+
+/* INTRO AUTO REMOVE (SAFE) */
+setTimeout(()=>{
+let intro=document.getElementById("intro");
+if(intro) intro.remove();
+},1800);
+
+/* SCROLL */
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+/* GPU STABILITY FIX */
+document.body.style.transform = "translateZ(0)";
+
+</script>
+
+</body>
+</html>
